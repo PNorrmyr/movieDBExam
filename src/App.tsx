@@ -4,26 +4,38 @@ import axios from 'axios';
 
 function App() {
   const [count, setCount] = useState(0)
-  let key = '';
+  const [movieList, setMovieList] = useState<[]>([])
+  const [key, setKey] = useState<string>('')
 
   useEffect(() => {
-    
-  })
+    axios.get('http://localhost:8080/api/keys')
+    .then(response => {
+      setKey(response.data.data) 
+    }) 
+    .catch(error => {
+      console.log(error);
+    })
+  }, [])
+  console.log('API nyckel' + key);
+
 
   useEffect(() => {
-    //Hämta filmer
-axios.get(`http://localhost:8080/api/movies?key=${key}`)
-.then(response => {
-  console.log(response.data);
-})
+    axios.get(`http://localhost:8080/api/movies?key=${key}`)
+    .then(response => {
+      setMovieList(response.data.data);      
+    })
+    .catch(error => {
+    console.log(error);
+    })
+  }, [setKey])
+  console.log(movieList);
+
 //Lägga till film
 const newMovie = {
   "title": "test",
   "poster": "",
   "trailer_link":""
 }
-axios.post()
-  }, []);
 
   return (
 <div className="app">
