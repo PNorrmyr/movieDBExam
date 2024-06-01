@@ -42,7 +42,7 @@ const newMovie = {
   return (
     <Routes>
       <Route path='/' element={<LoginPage />}/>
-  
+      
    </Routes>
   )
 }
