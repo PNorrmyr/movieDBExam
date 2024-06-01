@@ -6,7 +6,6 @@ import useMovieListStore from "../stores/movieList-store"
 
 function MovieListComponent() {
   const { movieList} = useMovieListStore(state => ({
-    movie : state.movie,
     movieList: state.movieList
   }))
 
