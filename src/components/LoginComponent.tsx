@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 function LoginComponents() {
   const handleLogin = (e : React.FormEvent<HTMLFormElement>) => {
@@ -7,12 +8,14 @@ function LoginComponents() {
 
   return (
     <section>
+        <h2>Login</h2>
         <form className="login-form" onSubmit={handleLogin}>
             <input type="text" id="username" className="username" placeholder="Username"/>
             <input type="password" id="password" className="password" placeholder="Password"/>
-            <button className="login-btn" >Login</button> 
+            <Link to={'/home'} className="link">
+              <button className="login-btn" >Login</button> 
+            </Link>
         </form>
-        <button className="signup-btn">Sign Up</button>
     </section>
   )
 }
