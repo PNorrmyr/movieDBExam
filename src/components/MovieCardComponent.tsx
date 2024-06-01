@@ -1,4 +1,6 @@
 
+
+
 function MovieCardComponent() {
   return (
    <section className="movie-card">

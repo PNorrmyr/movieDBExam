@@ -5,34 +5,36 @@ import { Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
 import SignUpPage from './pages/SignUpPage';
+import useMovieListStore from './stores/movieList-store'
 
 function App() {
-  const [movieList, setMovieList] = useState<[]>([])
   const [key, setKey] = useState<string>('')
+  const { movieList, addMovies } = useMovieListStore(state => ({
+    movieList : state.movieList,
+    addMovies : state.addMovies
+  }))
 
   useEffect(() => {
     axios.get('http://localhost:8080/api/keys')
     .then(response => {
-      setKey(response.data.data) 
+      setKey(response.data.data); 
     }) 
     .catch(error => {
       console.log(error);
     })
   }, [])
-  console.log('API nyckel' + key);
-
 
   useEffect(() => {
     axios.get(`http://localhost:8080/api/movies?key=${key}`)
     .then(response => {
-      setMovieList(response.data.data);      
+      addMovies(response.data.data);      
     })
     .catch(error => {
     console.log(error);
     })
-  }, [setKey])
-  console.log(movieList);
+  }, [key, addMovies])
 
+  console.log('movieList ' + movieList);
 //Lägga till film
 const newMovie = {
   "title": "test",
