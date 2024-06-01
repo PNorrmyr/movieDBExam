@@ -1,4 +1,5 @@
 import MovieType from '../models/Movie'
+import './styles/MovieCardComponent.css'
 
 type Props = {
   movie : MovieType 

@@ -1,0 +1,15 @@
+.movie-card{
+    display: flex;
+    max-height: 4rem;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.movie-card img {
+    max-height: 4rem;
+}
+
+.title {
+
+}
