@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom"
 import AddMovieComponent from "./AddMovieComponent"
 import MovieCardComponent from "./MovieCardComponent"
+import useMovieListStore from "../stores/movieList-store"
+
 
 function MovieListComponent() {
+  const { movieList} = useMovieListStore(state => ({
+    movie : state.movie,
+    movieList: state.movieList
+  }))
+
+
   return (
    <section className="movie-list-section">
          {
@@ -13,7 +21,10 @@ function MovieListComponent() {
       }
     <h2>Movie List</h2>
     <AddMovieComponent />
-    <MovieCardComponent />
+    
+    {movieList.map(movie => (
+        <MovieCardComponent key={movie.imdbid} movie = {movie} />
+    ))}
    </section>
   )
 }
