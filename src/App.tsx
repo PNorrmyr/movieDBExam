@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios';
+import { Route, Routes } from 'react-router-dom';
+import LoginPage from './pages/LoginPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -38,9 +40,10 @@ const newMovie = {
 }
 
   return (
-<div className="app">
-  test
-</div>
+    <Routes>
+      <Route path='/' element={<LoginPage />}/>
+  
+   </Routes>
   )
 }
 
