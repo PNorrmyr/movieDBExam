@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage'
 import SignUpPage from './pages/SignUpPage';
 import useMovieListStore from './stores/movieList-store'
 import useApiStore from './stores/api-store';
+import FavoritesPage from './pages/FavoritesPage';
 
 function App() {
   const { movieList, setMovies } = useMovieListStore(state => ({
@@ -54,6 +55,7 @@ function App() {
       <Route path='/' element={<LoginPage />} />
       <Route path='/signup' element={<SignUpPage />} />
       <Route path='/home' element = {<HomePage />}/>
+      <Route path='/favorites' element= {<FavoritesPage />} />
    </Routes>
   )
 }

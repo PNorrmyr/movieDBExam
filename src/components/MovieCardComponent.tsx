@@ -3,7 +3,7 @@ import './styles/MovieCardComponent.css'
 
 type Props = {
   movie : MovieType, 
-  handleDelete : () => void
+  handleDelete? : () => void
 }
 
 
