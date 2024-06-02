@@ -4,8 +4,10 @@ import MovieType from '../models/Movie'
 type MovieStore = {
     movie : MovieType,
     movieList : MovieType[],
-    addMovies : (movies : MovieType[]) => void
+    setMovies : (movies : MovieType[]) => void
 }
+
+
 
 const useMovieListStore = create<MovieStore>((set) => ({
     movie : {
@@ -15,12 +17,12 @@ const useMovieListStore = create<MovieStore>((set) => ({
         trailer_link: '',
         is_favorite: false
     },
+
     movieList : [],
 
-
-    addMovies : (movies : MovieType[]) => {
+    setMovies : (movies : MovieType[]) => {
        set({
-        movieList : movies
+        movieList : [...movies]
        })
     }
 

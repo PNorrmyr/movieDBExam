@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import AddMovieComponent from "./AddMovieComponent"
 import MovieCardComponent from "./MovieCardComponent"
 import useMovieListStore from "../stores/movieList-store"
@@ -9,15 +8,8 @@ function MovieListComponent() {
     movieList: state.movieList
   }))
 
-
   return (
    <section className="movie-list-section">
-         {
-        <Link to={'/'}>
-            
-            <button className="user-btn">Logout</button>
-        </Link>
-      }
     <h2>Movie List</h2>
     <AddMovieComponent />
     

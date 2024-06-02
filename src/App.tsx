@@ -6,41 +6,46 @@ import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
 import SignUpPage from './pages/SignUpPage';
 import useMovieListStore from './stores/movieList-store'
+import useApiStore from './stores/api-store';
 
 function App() {
-  const [key, setKey] = useState<string>('')
-  const { movieList, addMovies } = useMovieListStore(state => ({
+  const { movieList, setMovies } = useMovieListStore(state => ({
     movieList : state.movieList,
-    addMovies : state.addMovies
+    setMovies : state.setMovies
   }))
+
+  const {apiKey, setApiKey } = useApiStore((state) => ({
+    apiKey : state.apiKey,
+    setApiKey : state.setApiKey
+}))
 
   useEffect(() => {
     axios.get('http://localhost:8080/api/keys')
     .then(response => {
-      setKey(response.data.data); 
+      setApiKey(response.data.data); 
     }) 
     .catch(error => {
       console.log(error);
     })
   }, [])
 
-  useEffect(() => {
-    axios.get(`http://localhost:8080/api/movies?key=${key}`)
-    .then(response => {
-      addMovies(response.data.data);      
-    })
-    .catch(error => {
-    console.log(error);
-    })
-  }, [key, addMovies])
+  console.log(apiKey);
+  
 
-  console.log('movieList ' + movieList);
-//Lägga till film
-const newMovie = {
-  "title": "test",
-  "poster": "",
-  "trailer_link":""
-}
+  useEffect(() => {
+    if(apiKey) {
+      axios.get(`http://localhost:8080/api/movies?key=${apiKey}`)
+      .then(response => {
+        setMovies(response.data.data);      
+      })
+      .catch(error => {
+      console.log(error);
+      })
+    }
+  }, [apiKey, setMovies])
+
+  console.log(movieList);
+  
 
   return (
     <Routes>
