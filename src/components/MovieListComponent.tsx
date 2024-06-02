@@ -1,12 +1,16 @@
 import AddMovieComponent from "./AddMovieComponent"
 import MovieCardComponent from "./MovieCardComponent"
 import useMovieListStore from "../stores/movieList-store"
+import useApiStore from "../stores/api-store"
 
 
 function MovieListComponent() {
-  const { movieList} = useMovieListStore(state => ({
-    movieList: state.movieList
+  const { movieList, deleteMovie } = useMovieListStore(state => ({
+    movieList: state.movieList,
+    deleteMovie : state.deleteMovie
   }))
+  
+  const { apiKey } = useApiStore.getState()
 
   return (
    <section className="movie-list-section">
@@ -14,7 +18,10 @@ function MovieListComponent() {
     <AddMovieComponent />
     
     {movieList.map(movie => (
-        <MovieCardComponent key={movie.imdbid} movie = {movie} />
+        <MovieCardComponent 
+          key={movie.imdbid} 
+          movie = {movie} 
+          handleDelete={ () => deleteMovie(movie.imdbid, apiKey) } />
     ))}
    </section>
   )

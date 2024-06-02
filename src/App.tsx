@@ -45,6 +45,8 @@ function App() {
   }, [apiKey, setMovies])
 
   console.log(movieList);
+
+  
   
 
   return (
