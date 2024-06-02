@@ -30,7 +30,7 @@ function AddMovieComponent() {
 
   return (
     <section className="add-movie-section">
-        Add Movie Section
+        <h3>Add Movie</h3>
         <form className="add-movie-form" onSubmit={ handleAddMovie }>
           <input type="text" placeholder="Enter title..." value={title} onChange={(e) => setTitle(e.target.value)} />
           <input type="text" placeholder="Enter poster-link" value={poster} onChange={(e) => setPoster(e.target.value)}/>

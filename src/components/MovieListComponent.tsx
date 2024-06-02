@@ -15,9 +15,9 @@ function MovieListComponent() {
 
   return (
    <section className="movie-list-section">
-    <h2>Movie List</h2>
     <AddMovieComponent />
     
+    <h2>Movies</h2>
     {movieList.map(movie => (
         <MovieCardComponent 
           key={movie.imdbid} 
