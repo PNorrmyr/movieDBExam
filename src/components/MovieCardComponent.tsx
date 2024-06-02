@@ -11,7 +11,7 @@ function MovieCardComponent({ movie, handleDelete } : Props) {
  
   return (
    <section className="movie-card">
-          <img src={movie.poster} alt="Movie Thumbnail" className="movie-thumbnail" />
+          <img src={movie.poster} alt={`${movie.title} Thumbnail`} className="movie-thumbnail" />
           <h4 className="title">{movie.title}</h4>
           <button className="favorite-btn">Favorite</button>
           <button className="remove-btn" onClick={ handleDelete }>Delete</button>

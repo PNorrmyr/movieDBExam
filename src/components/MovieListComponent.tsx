@@ -7,7 +7,8 @@ import useApiStore from "../stores/api-store"
 function MovieListComponent() {
   const { movieList, deleteMovie } = useMovieListStore(state => ({
     movieList: state.movieList,
-    deleteMovie : state.deleteMovie
+    deleteMovie : state.deleteMovie,
+    
   }))
   
   const { apiKey } = useApiStore.getState()
