@@ -5,6 +5,7 @@ import axios from 'axios'
 type UserStore = {
     users : UserType[],
     user : UserType,
+    error : string,
     addUser : (user : UserType) => void
 }
 
@@ -16,25 +17,33 @@ const useUserStore = create<UserStore>((set) => ({
         password: '',
     },
 
-    addUser : (user : UserType) => {
-        const newUser = {
+    error: '',
+
+    addUser : async (user : UserType) => {
+        try {
+            const newUser = {
             "username": user.username,
-            "password": user.password,
-        }
-        axios.post('http://localhost:8080/api/auth/register', newUser)
-        .then(response => {
+            "password": user.password
+            }
+        const response = await axios.post('http://localhost:8080/api/auth/register', newUser)
             set(state => ({
-                users : [...state.users, response.data.user]
-            }))
-            return response.data.message
-        })  
-        .catch(error => {
+                users : [...state.users, response.data.user],
+                error : ''
+            })) 
+        } catch (error) {
             console.log('Error creating user', error);
-            
-        })     
+            if(axios.isAxiosError(error) && error.response){
+                set({ 
+                    error : error.response.data.message
+                })
+            } else {
+                set({
+                    error : 'Error creating user'
+                })
+            }
+
+        }     
     }
-
-
 }))
 
 export default useUserStore

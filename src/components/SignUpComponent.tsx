@@ -3,9 +3,10 @@ import userType from '../models/User'
 import { useState } from "react"
 
 function SignUpComponent() {
-  const { addUser, users } = useUserStore((state) => ({
+  const { addUser, users, error } = useUserStore((state) => ({
     addUser : state.addUser,
-    users : state.users
+    users : state.users,
+    error : state.error
   }))
   const [username, setUsername] = useState<string>('')
   const [password, setPassword] = useState<string>('')
@@ -16,10 +17,7 @@ function SignUpComponent() {
       username,
       password,
       active : false
-    }
-
-    console.log(newUser);
-    
+    }   
     addUser(newUser)
 
     setUsername('')
@@ -33,9 +31,26 @@ function SignUpComponent() {
    <section className="sign-up-section">
     <h2>Signup</h2>
     <form className="signup-form" onSubmit={handleSignUp} >
-            <input type="text" id="username" className="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
-            <input type="password" id="password" className="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                <button className="signup-btn" >Sign Up</button> 
+            <input 
+              type="text" 
+              id="username" 
+              className="username" 
+              placeholder="Username" 
+              value={username} 
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <input 
+              type="password" 
+              id="password" 
+              className="password" 
+              placeholder="Password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button className="signup-btn" >Sign Up</button> 
+            {
+              error && <p className="error-message">{error}</p>
+            }
         </form>
    </section>
   )
