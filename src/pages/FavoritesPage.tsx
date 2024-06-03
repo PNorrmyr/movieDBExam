@@ -23,7 +23,8 @@ function FavoritesPage() {
                 .map((movie) => (
                     <MovieCardComponent 
                     key={movie.imdbid}
-                    movie = {movie}/>
+                    movie = {movie}
+                    tempClass="tempClass"/>
             )) 
         }
     </section>

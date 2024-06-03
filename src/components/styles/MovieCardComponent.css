@@ -10,6 +10,6 @@
     max-height: 4rem;
 }
 
-.title {
-
+.tempClass {
+    display: none;
 }
