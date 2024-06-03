@@ -49,7 +49,7 @@ function SignUpComponent() {
             />
             <button className="signup-btn" >Sign Up</button> 
             {
-              error && <p className="error-message">{error}</p>
+              error ? <p className="message">{error}</p> : <p className="message">User Created</p>
             }
         </form>
    </section>
