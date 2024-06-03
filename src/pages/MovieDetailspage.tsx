@@ -4,6 +4,7 @@ import NavComponent from "../components/NavComponent"
 import { useEffect } from "react"
 import useMovieListStore from "../stores/movieList-store"
 import MovieType from '../models/Movie'
+import './styles/MovieDetailsPage.css'
 
 function MovieDetailspage() {
     const {movieId} = useParams<string>()
@@ -27,9 +28,11 @@ function MovieDetailspage() {
 
 
   return (
-    <section className="details-page-wrapper">
-        <NavComponent tempClass="favorites"/>
-        { movie ? <MovieDetailsComponent  /> : <p>Fetching Movie</p>}
+    <section>
+        <NavComponent tempClass="details-page"/>
+        <div className="details-page-wrapper">
+            { movie ? <MovieDetailsComponent  /> : <p>Fetching Movie</p>}
+        </div>
         
     </section>
   )

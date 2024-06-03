@@ -5,8 +5,17 @@
         align-items: center;
     }
 
+    .favorites-page button{
+        display: none;
+    }
+
+    .details-page button {
+        display: none;
+    }
+
+
     .btns{
-        margin-top: 2rem;
+        margin-top: 0rem;
         width: 100%;
         display: flex;
         justify-content: space-evenly;

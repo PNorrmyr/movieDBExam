@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom"
-import useApiStore from "../stores/api-store"
-import useFavoritesStore from "../stores/favorites-store"
 import useMovieListStore from "../stores/movieList-store"
+import './styles/MovieDetailsComponent.css'
 
 
 
@@ -9,10 +8,6 @@ function MovieDetailsComponent() {
     const { movie } = useMovieListStore((state) => ({
         movie : state.movie
     }))
-    const { toggleFavorite } = useFavoritesStore((state) => ({
-        toggleFavorite : state.toggleFavorite
-    }))
-    const { apiKey } = useApiStore.getState()
     const navigate = useNavigate()
 
     if(!movie) {
@@ -23,14 +18,13 @@ function MovieDetailsComponent() {
 
   return (
    <section className="details-component">
-    <button className="back-btn" onClick={() => navigate(-1)}>Back</button>
-    <button className="favorite-btn" onClick={ () => toggleFavorite(movie.imdbid, apiKey)}>Favorite</button>
-        <div>
-            <h2>{movie.title}</h2>
+    <div className="nav">
+        <button className="back-btn" onClick={() => navigate(-1)}>Back</button>
+        <h2>{movie.title}</h2>
+    </div>
+        <div className="info">
             <img src={movie.poster} alt={`${movie.title} Thumnail`} />           
-            <video src={movie.trailer_link} controls></video>
-            
-            
+            <video src={movie.trailer_link} controls></video>            
         </div>
         
    </section>
