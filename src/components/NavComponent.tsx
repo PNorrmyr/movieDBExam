@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom'
 import './styles/NavComponent.css'
 
-function NavComponent() {
+type Props = {
+  tempClass? : string
+}
+
+function NavComponent({ tempClass } : Props) {
   return (
-    <header className="heading">
+    <header className={`heading ${tempClass}`}>
       <img src='src\assets\logo.png' alt="website logo" className="logo" />
       {
         <div className="btns">
