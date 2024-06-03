@@ -4,7 +4,7 @@ import SignUpComponent from "../components/SignUpComponent"
 function SignUpPage() {
   return (
    <section className="sign-up-page-wrapper">
-    <NavComponent />
+    <NavComponent tempClass="hide-page"/>
     <SignUpComponent />
    </section>
   )

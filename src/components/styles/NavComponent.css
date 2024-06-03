@@ -5,14 +5,9 @@
         align-items: center;
     }
 
-    .favorites-page button{
+    .hide-page button{
         display: none;
     }
-
-    .details-page button {
-        display: none;
-    }
-
 
     .btns{
         margin-top: 0rem;
