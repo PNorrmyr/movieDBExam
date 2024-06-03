@@ -1,7 +1,7 @@
 type User = {
     username : string,
     password : string,
-    active : boolean
+    active? : boolean
 }
 
 export default User;
