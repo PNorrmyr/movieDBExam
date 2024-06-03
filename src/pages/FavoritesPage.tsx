@@ -18,7 +18,7 @@ function FavoritesPage() {
             <button>Back</button>
         </Link>
         {
-            
+            favoriteList.length === 0 ? <h4>No favorites yet</h4> :
             favoriteList.filter((movie) => movie.is_favorite)
                 .map((movie) => (
                     <MovieCardComponent 
