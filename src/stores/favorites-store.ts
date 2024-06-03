@@ -15,16 +15,22 @@ const useFavoritesStore = create<FavoritesStore>((set) => ({
     toggleFavorite : (movieId : string, apiKey : string) => {
         axios.put(`http://localhost:8080/api/movies/${movieId}?key=${apiKey}`)
         .then(response => {
-            set(state => ({
-                
-                 favoriteList : [...state.favoriteList, response.data.data]
-            }))
-            console.log(`Movie is favorite: `, response.data.data.is_favorite);
+            const movie : Movietype = response.data.data
+            set(state => {
+                if(movie.is_favorite){
+                    const exist = state.favoriteList.some(m => m.imdbid === movieId)
+                    if(!exist){
+                        return { favoriteList: [...state.favoriteList, movie]}
+                    }
+                } else {
+                    return { favoriteList: state.favoriteList.filter(m => m.imdbid !== movieId)}
+                }
+                return state
+            })
         })
-        .catch(e => {
-            console.log('Something went wrong ', e);
-        })
-    
+        .catch(error => {
+            console.log('Something went wrong ', error);
+        }) 
     }
 }))
 
