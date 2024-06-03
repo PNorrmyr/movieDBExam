@@ -16,6 +16,7 @@ const useFavoritesStore = create<FavoritesStore>((set) => ({
         axios.put(`http://localhost:8080/api/movies/${movieId}?key=${apiKey}`)
         .then(response => {
             set(state => ({
+                
                  favoriteList : [...state.favoriteList, response.data.data]
             }))
             console.log(`Movie is favorite: `, response.data.data.is_favorite);
@@ -23,15 +24,10 @@ const useFavoritesStore = create<FavoritesStore>((set) => ({
         .catch(e => {
             console.log('Something went wrong ', e);
         })
-
+    
     }
-    
-
-
-
-
-    
-
 }))
 
 export default useFavoritesStore
+
+

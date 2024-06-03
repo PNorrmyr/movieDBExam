@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import useApiStore from "../stores/api-store"
 import useFavoritesStore from "../stores/favorites-store"
 import useMovieListStore from "../stores/movieList-store"
@@ -13,16 +13,17 @@ function MovieDetailsComponent() {
         toggleFavorite : state.toggleFavorite
     }))
     const { apiKey } = useApiStore.getState()
+    const navigate = useNavigate()
 
     if(!movie) {
         return <p>Fetching movie</p>
     }
 
+
+
   return (
    <section className="details-component">
-    <Link to={'/home'}>
-        <button className="back-btn">Back</button>
-    </Link>
+    <button className="back-btn" onClick={() => navigate(-1)}>Back</button>
     <button className="favorite-btn" onClick={ () => toggleFavorite(movie.imdbid, apiKey)}>Favorite</button>
         <div>
             <h2>{movie.title}</h2>
