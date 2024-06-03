@@ -1,16 +1,33 @@
-.movie-card{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 1rem;
-    max-width: 300px;
-}
+@media (max-width: 500px) {
+    .movie-card{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: .5rem;
+    }
 
-.thumbnail {
-    height: auto;
-    width: 100%;
-}
+    .thumbnail{
+        width: 80px;
+        margin-right: 0px;
+    }
 
-.tempClass {
-    display: none;
+    .title-container{
+        width: 100%;
+        display: flex;
+        justify-content: start;
+    }
+
+    .title{
+        text-decoration: none;
+        
+    }
+
+    .butns{
+        width: 100%;
+
+    }
+
+    .favorite-btn, .remove-btn{
+        padding: .5rem 1rem;
+    }
 }

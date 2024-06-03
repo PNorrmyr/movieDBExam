@@ -24,11 +24,15 @@ function MovieCardComponent({ movie, handleDelete, tempClass} : Props) {
    <section className="movie-card">
           <img src={movie.poster} alt={`${movie.title} Thumbnail`} 
           className="thumbnail" />
-          <Link to={`/movies/${movie.imdbid}`}>
-            <h4 className="title">{movie.title}</h4>
-          </Link>
-          <button className="favorite-btn" onClick={ () => toggleFavorite(movie.imdbid, apiKey ) }>Favorite</button>
-          <button className={`remove-btn ${tempClass}`} onClick={ handleDelete }>Delete</button>
+          <div className='title-container'>
+            <Link to={`/movies/${movie.imdbid}`}>
+              <h4 className="title">{movie.title}</h4>
+            </Link>
+          </div>
+          <div className="btns">
+            <button className="favorite-btn" onClick={ () => toggleFavorite(movie.imdbid, apiKey ) }>Favorite</button>
+            <button className={`remove-btn ${tempClass}`} onClick={ handleDelete }>Delete</button>
+          </div>
    </section>
   )
 }
