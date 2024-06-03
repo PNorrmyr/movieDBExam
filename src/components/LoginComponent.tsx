@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import './styles/LoginComponent.css'
 
 function LoginComponents() {
   const handleLogin = (e : React.FormEvent<HTMLFormElement>) => {

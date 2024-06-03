@@ -2,8 +2,10 @@
     width: 100%;
 }
 
-.heading.favorites .btns {
+.heading.favorites-page .btns,
+.heading.login-page .btns {
     display: none;
-
 }
+
+
 
