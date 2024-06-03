@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import MovieCardComponent from "../components/MovieCardComponent"
 import useFavoritesStore from "../stores/favorites-store"
+import NavComponent from "../components/NavComponent"
 
 function FavoritesPage() {
     const { favoriteList } = useFavoritesStore(state => ({
@@ -11,7 +12,8 @@ function FavoritesPage() {
 
   return (
     <section className="favorite-page-wrapper">
-        <h2>Favorite Movies</h2>
+        <NavComponent tempClass="favorites"/>
+        <h2>Favorites</h2>
         <Link to={'/home'}>
             <button>Back</button>
         </Link>

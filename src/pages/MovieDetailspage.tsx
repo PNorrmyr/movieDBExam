@@ -28,7 +28,7 @@ function MovieDetailspage() {
 
   return (
     <section className="details-page-wrapper">
-        <NavComponent tempClass="favorites" />
+        <NavComponent tempClass="favorites"/>
         { movie ? <MovieDetailsComponent  /> : <p>Fetching Movie</p>}
         
     </section>
