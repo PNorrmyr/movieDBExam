@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import useApiStore from "../stores/api-store"
 import useFavoritesStore from "../stores/favorites-store"
 import useMovieListStore from "../stores/movieList-store"
@@ -19,6 +20,9 @@ function MovieDetailsComponent() {
 
   return (
    <section className="details-component">
+    <Link to={'/home'}>
+        <button className="back-btn">Back</button>
+    </Link>
     <button className="favorite-btn" onClick={ () => toggleFavorite(movie.imdbid, apiKey)}>Favorite</button>
         <div>
             <h2>{movie.title}</h2>
