@@ -3,7 +3,9 @@ import MovieType from '../models/Movie'
 import axios from "axios";
 
 type MovieStore = {
+    movie : MovieType,
     movieList : MovieType[],
+    setMovie : (movie : MovieType) => void,
     setMovies : (movies : MovieType[]) => void,
     deleteMovie : (movieId : string, apiKey : string) => void,
     addMovie : (movie : MovieType, apiKey : string) => void
@@ -12,6 +14,21 @@ type MovieStore = {
 
 
 const useMovieListStore = create<MovieStore>((set) => ({
+
+    movie : {
+        title: "",
+        poster: "",
+        trailer_link: "",
+        imdbid: "",
+        is_favorite: false
+    },
+
+    setMovie : (movie : MovieType) => {
+        set({
+            movie : movie
+        })
+
+    },
 
     movieList : [],
 
