@@ -8,7 +8,7 @@ function LoginComponents() {
   
 
   return (
-    <section>
+    <section className="login-section">
         <h2>Login</h2>
         <form className="login-form" onSubmit={handleLogin}>
             <input type="text" id="username" className="username" placeholder="Username"/>

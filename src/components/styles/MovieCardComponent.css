@@ -1,13 +1,14 @@
 .movie-card{
     display: flex;
-    max-height: 4rem;
-    width: 100%;
+    align-items: center;
     justify-content: space-between;
-
+    margin: 1rem;
+    max-width: 300px;
 }
 
-.movie-card img {
-    max-height: 4rem;
+.thumbnail {
+    height: auto;
+    width: 100%;
 }
 
 .tempClass {

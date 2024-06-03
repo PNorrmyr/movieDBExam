@@ -1,11 +1,14 @@
 import NavComponent from "../components/NavComponent"
 import MovieListComponent from "../components/MovieListComponent"
+import './styles/HomePage.css'
 
 function HomePage() {
   return (
-   <section className="home-page-wrapper">
+   <section>
         <NavComponent />
-        <MovieListComponent />
+        <div className="home-page-wrapper">
+          <MovieListComponent />
+        </div>
    </section>
   )
 }

@@ -1,8 +1,10 @@
-.login-page-wrapper{
-    padding: 1rem;
-  text-align: center;
+@media (max-width: 500px) {
+  .login-page-wrapper{
+    max-width: 100%;
+    text-align: center;
 }
 
 .sign-up-btn {
     padding: .5rem 2rem;
+}
 }

@@ -2,6 +2,7 @@ import AddMovieComponent from "./AddMovieComponent"
 import MovieCardComponent from "./MovieCardComponent"
 import useMovieListStore from "../stores/movieList-store"
 import useApiStore from "../stores/api-store"
+import './styles/MovieListComponent.css'
 
 
 function MovieListComponent() {

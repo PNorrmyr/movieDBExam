@@ -17,7 +17,7 @@ function NavComponent({ tempClass } : Props) {
               </Link>
 
               <Link to={'/favorites'}>
-                <button className="favorites btn">View Favorites</button>
+                <button className="favorites-btn">View Favorites</button>
               </Link>
             </div>
 

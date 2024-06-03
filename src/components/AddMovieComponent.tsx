@@ -2,6 +2,7 @@ import { useState } from 'react'
 import MovieType from '../models/Movie'
 import useApiStore from "../stores/api-store"
 import useMovieListStore from '../stores/movieList-store'
+import './styles/AddMovieComponent.css'
 
 
 function AddMovieComponent() {

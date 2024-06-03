@@ -1,0 +1,17 @@
+h3{
+    text-align: center;
+}
+
+.add-movie-form{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-top: .5rem;
+}
+
+input, .add-btn {
+    padding: .3rem;
+    border-radius: .5rem;
+    border: 1px solid black;
+}
+

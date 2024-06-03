@@ -1,22 +1,23 @@
-h2 {
-    text-align: center;
-}
+@media (max-width: 500px) {    
+    .login-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-.login-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-    width: 100%;
-}
+    .login-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
 
-.username, .password {
-   padding: .5rem;
-   border: 1px solid black;
-   border-radius: 5px;
-}
+    .username, .password {
+        padding: .5rem;
+    }
 
-.login-btn {
-    padding: .5rem 2rem;
+    .login-btn{
+        padding: .5rem 2rem;
+    }
+
 }

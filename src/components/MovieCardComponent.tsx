@@ -23,7 +23,7 @@ function MovieCardComponent({ movie, handleDelete, tempClass} : Props) {
   return (
    <section className="movie-card">
           <img src={movie.poster} alt={`${movie.title} Thumbnail`} 
-          className="movie-thumbnail" />
+          className="thumbnail" />
           <Link to={`/movies/${movie.imdbid}`}>
             <h4 className="title">{movie.title}</h4>
           </Link>
