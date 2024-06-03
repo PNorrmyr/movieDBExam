@@ -1,18 +1,23 @@
+import { Link } from "react-router-dom"
 import MovieCardComponent from "../components/MovieCardComponent"
-import useMovieListStore from "../stores/movieList-store"
+import useFavoritesStore from "../stores/favorites-store"
 
 function FavoritesPage() {
-    const { movieList } = useMovieListStore(state => ({
-        movieList : state.movieList
+    const { favoriteList } = useFavoritesStore(state => ({
+        favoriteList : state.favoriteList
     }))
 
 
 
   return (
     <section className="favorite-page-wrapper">
-        <h2>Favorites</h2>
+        <h2>Favorite Movies</h2>
+        <Link to={'/home'}>
+            <button>Back</button>
+        </Link>
         {
-            movieList.filter((movie) => movie.is_favorite)
+            
+            favoriteList.filter((movie) => movie.is_favorite)
                 .map((movie) => (
                     <MovieCardComponent 
                     key={movie.imdbid}
