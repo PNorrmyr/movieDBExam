@@ -8,7 +8,6 @@ function NavComponent() {
       {
         <div className="btns">
           <Link to={'/'}>
-              
               <button className="user-btn">Logout</button>
           </Link>
 
