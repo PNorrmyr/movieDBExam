@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import './styles/LoginComponent.css'
 import useUserStore from "../stores/user-store"
 import userType from '../models/User'
@@ -37,11 +37,19 @@ function LoginComponents() {
     <section className="login-section">
         <h2>Login</h2>
         <form className="login-form" onSubmit={handleLogin}>
-            <input type="text" id="username" className="username" placeholder="Username" onChange={(e) => setUsername(e.target.value)}/>
-            <input type="password" id="password" className="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
-            {/* <Link to={'/home'} className="link"> */}
-              <button className="login-btn" >Login</button> 
-            {/* </Link> */}
+            <input  type="text" 
+                    id="username" 
+                    className="username" 
+                    placeholder="Username" 
+                    onChange={(e) => setUsername(e.target.value)}
+            />
+            <input  type="password" 
+                    id="password" 
+                    className="password" 
+                    placeholder="Password" 
+                    onChange={(e) => setPassword(e.target.value)}
+            />
+            <button className="login-btn" >Login</button> 
         </form>
     </section>
   )
