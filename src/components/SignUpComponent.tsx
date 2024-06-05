@@ -1,6 +1,9 @@
 import useUserStore from "../stores/user-store"
 import userType from '../models/User'
 import { useEffect, useState } from "react"
+import homeButton from '../assets/film-solid.svg'
+import './styles/SignUpComponent.css'
+import { Link } from "react-router-dom"
 
 function SignUpComponent() {
   const { addUser, users, error } = useUserStore((state) => ({
@@ -32,7 +35,11 @@ function SignUpComponent() {
 
   return (
    <section className="sign-up-section">
-    <h2>Signup</h2>
+      <Link to={'/'}>
+        <img src={homeButton} alt="Home Button" className="home-btn"/>
+      </Link>
+      <h2>Signup</h2>
+
     <form className="signup-form" onSubmit={handleSignUp} >
             <input 
               type="text" 

@@ -6,7 +6,7 @@ import './styles/LoginPage.css'
 function LoginPage() {
   return (  
     <section>
-        <NavComponent tempClass="login-page"/>
+        <NavComponent tempClass="hide-page"/>
         <section className="login-page-wrapper">
             <LoginComponents />
             <Link to={'/signup'} className="link">

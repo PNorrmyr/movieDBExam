@@ -12,7 +12,7 @@ function FavoritesPage() {
 
   return (
     <section className="favorite-page-wrapper">
-        <NavComponent tempClass="favorites-page"/>
+        <NavComponent tempClass="hide-page"/>
         <h2>Favorites</h2>
         <Link to={'/home'}>
             <button>Back</button>

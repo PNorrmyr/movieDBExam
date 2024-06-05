@@ -1,5 +1,6 @@
 import NavComponent from "../components/NavComponent"
 import SignUpComponent from "../components/SignUpComponent"
+import './styles/SignUpPage.css'
 
 function SignUpPage() {
   return (
