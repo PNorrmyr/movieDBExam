@@ -28,7 +28,7 @@ function MovieDetailspage() {
 
 
   return (
-    <section>
+    <section className="movie-details-page-wrapper">
         <NavComponent tempClass="hide-page"/>
         <div className="details-page-wrapper">
             { movie ? <MovieDetailsComponent  /> : <p>Fetching Movie</p>}

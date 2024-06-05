@@ -33,7 +33,10 @@ function NavComponent({ tempClass } : Props) {
       { 
            <div className="btns">
               <Link to={'/'}>
-                  <button className="user-btn" onClick={handleLogout}>Logout</button>
+                  <button className="user-btn" 
+                          onClick={handleLogout}>
+                          Logout
+                  </button>
               </Link>
 
               <Link to={'/favorites'}>
