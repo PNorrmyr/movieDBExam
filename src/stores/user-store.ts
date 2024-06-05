@@ -6,7 +6,7 @@ type UserStore = {
     users : UserType[],
     user : UserType,
     error : string,
-    addUser : (user : UserType) => void
+    addUser : (user : UserType) => Promise<boolean>
 }
 
 const useUserStore = create<UserStore>((set) => ({
@@ -30,6 +30,7 @@ const useUserStore = create<UserStore>((set) => ({
                 users : [...state.users, response.data.user],
                 error : ''
             })) 
+            return true
         } catch (error) {
             console.log('Error creating user', error);
             if(axios.isAxiosError(error) && error.response){
@@ -41,7 +42,7 @@ const useUserStore = create<UserStore>((set) => ({
                     error : 'Error creating user'
                 })
             }
-
+            return false
         }     
     }
 }))

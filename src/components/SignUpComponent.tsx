@@ -1,6 +1,6 @@
 import useUserStore from "../stores/user-store"
 import userType from '../models/User'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function SignUpComponent() {
   const { addUser, users, error } = useUserStore((state) => ({
@@ -10,22 +10,25 @@ function SignUpComponent() {
   }))
   const [username, setUsername] = useState<string>('')
   const [password, setPassword] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
 
-  const handleSignUp = (e : React.FormEvent<HTMLFormElement>) => {
+  useEffect(() => {
+    if(error){setMessage(`${error}`)}
+  }, [error])
+
+  const handleSignUp  = async (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const newUser : userType = {
       username,
       password,
       active : false
     }   
-    addUser(newUser)
 
+    const success = await addUser(newUser)
+    if(success){setMessage('User Created')}
     setUsername('')
     setPassword('')  
-
   }
-
-
 
   return (
    <section className="sign-up-section">
@@ -48,10 +51,11 @@ function SignUpComponent() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <button className="signup-btn" >Sign Up</button> 
-            {
-              error ? <p className="message">{error}</p> : <p className="message">User Created</p>
-            }
         </form>
+          {
+             message && <p className="message">{message}</p>
+          }
+            
    </section>
   )
 }
