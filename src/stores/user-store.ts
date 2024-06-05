@@ -6,7 +6,9 @@ type UserStore = {
     users : UserType[],
     user : UserType,
     error : string,
-    addUser : (user : UserType) => Promise<boolean>
+    addUser : (user : UserType) => Promise<boolean>,
+    loginUser : (user : UserType) => Promise<boolean>,
+    logoutUser : () => Promise<boolean>
 }
 
 const useUserStore = create<UserStore>((set) => ({
@@ -44,7 +46,36 @@ const useUserStore = create<UserStore>((set) => ({
             }
             return false
         }     
+    },
+
+    loginUser : async (user : UserType) => {
+        try {
+            const response = await axios.post('http://localhost:8080/api/auth/login', user)
+           console.log('response', response.data);
+           if(response.data.success){
+            sessionStorage.setItem(response.data.user.username, response.data.user.password)
+            return true
+           }
+        } catch (error) {
+            console.log('error', error.response.data);
+        }
+        return false
+    },
+
+    logoutUser : async () => {
+        try {
+            const response = await axios.post('http://localhost:8080/api/auth/logout')
+           console.log('response', response.data);
+           if(response.data.success){
+            sessionStorage.clear()
+            return true
+           }
+        } catch (error) {
+            console.log('error', error.response.data);
+        }
+        return false
     }
+
 }))
 
 export default useUserStore
