@@ -4,6 +4,8 @@
         flex-direction: row;
         align-items: center;
         margin-bottom: .5rem;
+        background-color: rgba(128, 203, 226, 0.493);
+        padding: .5rem;
     }
 
     .thumbnail{
@@ -15,19 +17,27 @@
         width: 100%;
         display: flex;
         justify-content: start;
+        background-color: rgba(128, 203, 226, 0.493);
+        padding: 0;
     }
 
     .title{
         text-decoration: none;
-        
+        background-color: rgba(128, 203, 226, 0.493);
     }
 
-    .butns{
+    .btns{
         width: 100%;
+        margin: 0;
 
+    }
+
+    .link{
+        text-decoration: none;
     }
 
     .favorite-btn, .remove-btn{
         padding: .5rem 1rem;
+        background-color: rgba(128, 203, 226, 0.493);
     }
 }

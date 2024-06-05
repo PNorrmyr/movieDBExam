@@ -1,5 +1,6 @@
-h2{
-    padding: 1rem;
-    text-align: center;
+@media (max-width: 500px) {
+    h2{
+        text-align: center;
+    }
 }
 
