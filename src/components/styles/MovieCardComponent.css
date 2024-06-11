@@ -47,6 +47,19 @@
     .link{
         text-decoration: none;
     }
+
+    .favorite-icon {
+        display: flex;
+        height: 3rem;
+        width: 3rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fa-regular, .fa-solid{
+        color: #7fa99b;
+        font-size: 2rem;
+    }
     
     
     .remove-btn{

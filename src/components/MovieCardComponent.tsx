@@ -3,6 +3,7 @@ import MovieType from '../models/Movie'
 import useApiStore from '../stores/api-store'
 import useFavoritesStore from '../stores/favorites-store'
 import './styles/MovieCardComponent.css'
+import { useEffect, useState } from 'react'
 
 type Props = {
   movie : MovieType, 
@@ -14,11 +15,25 @@ type Props = {
 
 
 function MovieCardComponent({ movie, handleDelete, tempClass} : Props) {
-  const { toggleFavorite } = useFavoritesStore((state) => ({
-    toggleFavorite : state.toggleFavorite
+  const { toggleFavorite, favoriteList } = useFavoritesStore((state) => ({
+    toggleFavorite : state.toggleFavorite,
+    favoriteList : state.favoriteList
   }))
 
   const { apiKey } = useApiStore.getState()
+
+  const [isFavorite, setIsFavorite] = useState<boolean>(false)
+
+  useEffect(()=> {
+    setIsFavorite(favoriteList.some(m => m.imdbid === movie.imdbid))
+  },[favoriteList, movie.imdbid])
+
+  const handleFavoriteClick = () => {
+    toggleFavorite(movie.imdbid, apiKey)
+    setIsFavorite((prev) => !prev)
+  }
+
+  
  
   return (
    <section className="movie-card">
@@ -30,10 +45,17 @@ function MovieCardComponent({ movie, handleDelete, tempClass} : Props) {
             </Link>
           </div>
           <div className="btns">
-            <div className='favorite-icon' onClick={ () => toggleFavorite(movie.imdbid, apiKey ) }>
-              <i className="fa-regular fa-star"></i>  
+            <div className='favorite-icon' onClick={ () => handleFavoriteClick() }>
+              {
+                isFavorite ? 
+                  <i className="fa-solid fa-star"></i>
+                 : 
+                  <i className="fa-regular fa-star"></i>  
+              }
             </div>
-            <button className={`remove-btn ${tempClass}`} onClick={ handleDelete }>Delete</button>
+            <div className={`delete-icon ${tempClass}`} onClick={ handleDelete }>
+              <i className="fa-solid fa-trash"></i>
+            </div>
           </div>
    </section>
   )
