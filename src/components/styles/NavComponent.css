@@ -1,24 +1,38 @@
 @media (max-width: 500px) {
+    .heading{
+        background-color: #fdc57b; 
 
-    .heading {
-        flex-direction: column;
-        align-items: center;
     }
 
-    .hide-page button{
-        display: none;
-    }
-
-    .btns{
-        margin-top: 0rem;
-        width: 100%;
+    .top-nav{
         display: flex;
-        justify-content: space-evenly;
+        padding: 1rem;
+        align-items: start;
+        justify-content: space-between;
+        padding-bottom: 0;
+
+    }
+
+    .top-nav h1 {
+        font-size: 2rem;
+        text-align: center;
     }
 
     .logo{
         width: 100%;
         height: auto;
+    }
+
+    .user-btn, .favorites-btn{
+        padding: .3rem .4rem;
+        background-color: #7fa99b;
+        color: #fbf2d5;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0;
     }
 
 }

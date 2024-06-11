@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './styles/NavComponent.css'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo3.png'
 import useUserStore from '../stores/user-store'
 
 type Props = {
@@ -31,7 +31,7 @@ function NavComponent({ tempClass } : Props) {
     <header className={`heading ${tempClass}`}>
       <img src={logo} alt="website logo" className="logo" />
       { 
-           <div className="btns">
+           <div className="top-nav">
               <Link to={'/'}>
                   <button className="user-btn" 
                           onClick={handleLogout}>
@@ -39,8 +39,10 @@ function NavComponent({ tempClass } : Props) {
                   </button>
               </Link>
 
+              <h1>My Movie Database</h1>
+
               <Link to={'/favorites'}>
-                <button className="favorites-btn">View Favorites</button>
+                <button className="favorites-btn">Favorites</button>
               </Link>
             </div>
 

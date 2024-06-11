@@ -30,7 +30,9 @@ function MovieCardComponent({ movie, handleDelete, tempClass} : Props) {
             </Link>
           </div>
           <div className="btns">
-            <button className="favorite-btn" onClick={ () => toggleFavorite(movie.imdbid, apiKey ) }>Favorite</button>
+            <div className='favorite-icon' onClick={ () => toggleFavorite(movie.imdbid, apiKey ) }>
+              <i className="fa-regular fa-star"></i>  
+            </div>
             <button className={`remove-btn ${tempClass}`} onClick={ handleDelete }>Delete</button>
           </div>
    </section>

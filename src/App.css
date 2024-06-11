@@ -2,9 +2,25 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: azure;
+    color: #394a51;;
 }
 
 Link{
     text-decoration: none;
+}
+
+.first-color { 
+	background: #394a51; 
+}
+	
+.second-color { 
+	background: #7fa99b; 
+}
+
+.third-color { 
+	background: #fbf2d5; 
+}
+
+.fourth-color { 
+	background: #fdc57b; 
 }

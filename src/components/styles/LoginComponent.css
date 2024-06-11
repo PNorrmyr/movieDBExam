@@ -3,21 +3,39 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        color: #394a51;;
     }
 
     .login-form{
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1.5rem;        
+    }
+
+    .login-section h2{
+        color: #394a51;
+        font-size: 2rem;
     }
 
     .username, .password {
         padding: .5rem;
+        background-color: #7fa99b;
+        color: #fbf2d5;
+        border: none;
+        font-weight: 600;
+        font-size: .8rem;
     }
 
     .login-btn{
         padding: .5rem 2rem;
+        background-color: #7fa99b;
+        color: #fbf2d5;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
     }
 
 }

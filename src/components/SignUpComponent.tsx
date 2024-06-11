@@ -1,9 +1,8 @@
 import useUserStore from "../stores/user-store"
 import userType from '../models/User'
 import { useEffect, useState } from "react"
-import homeButton from '../assets/film-solid.svg'
 import './styles/SignUpComponent.css'
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 function SignUpComponent() {
   const { addUser, users, error } = useUserStore((state) => ({
@@ -14,6 +13,12 @@ function SignUpComponent() {
   const [username, setUsername] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [message, setMessage] = useState<string>('')
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setMessage('')
+  },[location.pathname])
 
   useEffect(() => {
     if(error){setMessage(`${error}`)}
@@ -33,11 +38,9 @@ function SignUpComponent() {
     setPassword('')  
   }
 
+
   return (
    <section className="sign-up-section">
-      <Link to={'/'}>
-        <img src={homeButton} alt="Home Button" className="home-btn"/>
-      </Link>
       <h2>Signup</h2>
 
     <form className="signup-form" onSubmit={handleSignUp} >
@@ -58,10 +61,15 @@ function SignUpComponent() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <button className="signup-btn" >Sign Up</button> 
+         
         </form>
           {
              message && <p className="message">{message}</p>
           }
+       
+       <Link to={'/'}>
+      <button className="back-btn">Back</button>
+      </Link>
             
    </section>
   )
