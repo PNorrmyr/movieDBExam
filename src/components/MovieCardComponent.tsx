@@ -41,7 +41,7 @@ function MovieCardComponent({ movie, handleDelete, tempClass} : Props) {
           className="thumbnail" />
           <div className='title-container'>
             <Link to={`/movies/${movie.imdbid}`} className='link'>
-              <h4 className="title">{movie.title}</h4>
+              <h4 className="movie-title">{movie.title}</h4>
             </Link>
           </div>
           <div className="btns">

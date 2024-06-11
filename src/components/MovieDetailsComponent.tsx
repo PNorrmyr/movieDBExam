@@ -18,14 +18,12 @@ function MovieDetailsComponent() {
 
   return (
    <section className="details-component">
-    <div className="nav">
-        <button className="back-btn" onClick={() => navigate(-1)}>Back</button>
-        <h2>{movie.title}</h2>
+    <h2>{movie.title}</h2>
+    <button className="back-btn" onClick={() => navigate(-1)}>Back</button>
+    <div className="info">
+        <img src={movie.poster} alt={`${movie.title} Thumnail`}/>           
+        <video src={movie.trailer_link} controls></video>            
     </div>
-        <div className="info">
-            <img src={movie.poster} alt={`${movie.title} Thumnail`} />           
-            <video src={movie.trailer_link} controls></video>            
-        </div>
         
    </section>
   )

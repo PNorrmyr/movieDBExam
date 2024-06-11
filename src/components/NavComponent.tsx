@@ -28,12 +28,12 @@ function NavComponent({ tempClass } : Props) {
   } 
 
   return (
-    <header className={`heading ${tempClass}`}>
+    <header className="heading">
       <img src={logo} alt="website logo" className="logo" />
       { 
-           <div className="top-nav">
+           <div className={`top-nav ${tempClass}`}>
               <Link to={'/'}>
-                  <button className="user-btn" 
+                  <button className={`user-btn ${tempClass}`} 
                           onClick={handleLogout}>
                           Logout
                   </button>
@@ -42,7 +42,7 @@ function NavComponent({ tempClass } : Props) {
               <h1>My Movie Database</h1>
 
               <Link to={'/favorites'}>
-                <button className="favorites-btn">Favorites</button>
+                <button className={`favorites-btn ${tempClass}`}>Favorites</button>
               </Link>
             </div>
 
