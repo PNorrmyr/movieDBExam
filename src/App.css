@@ -2,9 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: #394a51;;
-    
-}
+    color: #394a51;
+    font-family: "Inter Tight", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}   
 
 Link{
     text-decoration: none;

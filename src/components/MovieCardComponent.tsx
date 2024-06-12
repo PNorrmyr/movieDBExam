@@ -21,7 +21,6 @@ function MovieCardComponent({ movie, handleDelete, tempClass} : Props) {
   }))
 
   const { apiKey } = useApiStore.getState()
-
   const [isFavorite, setIsFavorite] = useState<boolean>(false)
 
   useEffect(()=> {
