@@ -33,9 +33,27 @@ function AddMovieComponent() {
     <section className="add-movie-section">
         <h3>Add Movie</h3>
         <form className="add-movie-form" onSubmit={ handleAddMovie }>
-          <input type="text" placeholder="Enter title..." value={title} onChange={(e) => setTitle(e.target.value)} />
-          <input type="text" placeholder="Enter poster-link" value={poster} onChange={(e) => setPoster(e.target.value)}/>
-          <input type="text" placeholder="Enter trailer-link" value={trailer} onChange={(e) => setTrailer(e.target.value)}/>
+          <input 
+            type="text" 
+            id='title'
+            placeholder="Enter title..." 
+            value={title} 
+            onChange={(e) => setTitle(e.target.value)} 
+          />
+          <input 
+            type="text" 
+            id='poster'
+            placeholder="Enter poster-link" 
+            value={poster} 
+            onChange={(e) => setPoster(e.target.value)}
+          />
+          <input 
+            type="text" 
+            id='trailer'
+            placeholder="Enter trailer-link" 
+            value={trailer} 
+            onChange={(e) => setTrailer(e.target.value)}
+          />
           <button className="add-btn" type='submit'>Add Movie</button>
         </form>
     </section>

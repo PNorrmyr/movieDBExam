@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './styles/NavComponent.css'
-import logo from '../assets/logo3.png'
+import logo from '../assets/logo6.png'
 import useUserStore from '../stores/user-store'
 
 type Props = {

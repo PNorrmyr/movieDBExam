@@ -8,6 +8,7 @@
         flex-direction: column;
         gap: .5rem;
         margin-top: .5rem;
+        align-items: center;
     }
     
     input, .add-btn {
@@ -18,6 +19,14 @@
         font-weight: 600;
         font-size: .8rem;
         border-radius: 5px;
+    }
+
+    .add-btn{
+        cursor: pointer;
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        
     }
 
 

@@ -5,7 +5,7 @@
       width: 100%;
   }  
 
-  .favorite-page-wrapper h2{
+  .favorite-page-wrapper h2, .favorite-page-wrapper h4 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 0;
@@ -14,6 +14,8 @@
   .back-btn{
     margin-bottom: 1rem;
 }
+
+
 
 }
 
