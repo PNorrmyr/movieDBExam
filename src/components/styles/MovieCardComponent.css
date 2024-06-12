@@ -34,6 +34,10 @@
         color: #394a51;
     }
 
+    .hidden{
+        display: none;
+    }
+
     .btns{
         display: flex;
         flex-direction: column;

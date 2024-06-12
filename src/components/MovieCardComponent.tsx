@@ -54,7 +54,7 @@ function MovieCardComponent({ movie, handleDelete, tempClass} : Props) {
               }
             </div>
             <div className={`delete-icon ${tempClass}`} onClick={ handleDelete }>
-              <i className="fa-solid fa-trash"></i>
+              <i className={`fa-solid fa-trash ${tempClass}`}></i>
             </div>
           </div>
    </section>

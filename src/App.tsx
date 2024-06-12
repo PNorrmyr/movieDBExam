@@ -31,9 +31,6 @@ function App() {
     })
   }, [])
 
-  console.log(apiKey);
-  
-
   useEffect(() => {
     if(apiKey) {
       axios.get(`http://localhost:8080/api/movies?key=${apiKey}`)
@@ -45,11 +42,6 @@ function App() {
       })
     }
   }, [apiKey, setMovies])
-
-  console.log(movieList);
-
-  
-  
 
   return (
     <Routes>

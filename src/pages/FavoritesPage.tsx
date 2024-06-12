@@ -9,8 +9,6 @@ function FavoritesPage() {
         favoriteList : state.favoriteList
     }))
 
-
-
   return (
     <section>
         <NavComponent tempClass="hide-page"/>
@@ -26,7 +24,7 @@ function FavoritesPage() {
                         <MovieCardComponent 
                         key={movie.imdbid}
                         movie = {movie}
-                        tempClass="tempClass"/>
+                        tempClass="hidden"/>
                 )) 
             }
         </div>
