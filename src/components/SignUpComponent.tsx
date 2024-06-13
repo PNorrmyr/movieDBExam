@@ -2,25 +2,27 @@ import useUserStore from "../stores/user-store"
 import userType from '../models/User'
 import { useEffect, useState } from "react"
 import './styles/SignUpComponent.css'
-import { Link, useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 function SignUpComponent() {
-  const { addUser, error } = useUserStore((state) => ({
+  const { addUser, error, resetError } = useUserStore((state) => ({
     addUser : state.addUser,
-    error : state.error
+    error : state.error,
+    resetError : state.resetError
   }));
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-
-  const location = useLocation();
-
-  useEffect(() => {
-    setMessage('')
-  },[location.pathname]);
+  
+  const resetMessage = () => {
+    resetError();
+  };
 
   useEffect(() => {
-    if(error){setMessage(`${error}`)}
+    if (error) {
+      const cleanedError = error.replace(/"/g, '');
+      setMessage(`${cleanedError}`);
+    }
   }, [error]);
 
   const handleSignUp  = async (e : React.FormEvent<HTMLFormElement>) => {
@@ -32,7 +34,9 @@ function SignUpComponent() {
     };
 
     const success = await addUser(newUser);
-    if(success){setMessage('User Created')};
+    if(success){
+      setMessage('User Created')
+    };
     setUsername('');
     setPassword('');
   };
@@ -40,7 +44,7 @@ function SignUpComponent() {
 
   return (
    <section className="sign-up-section">
-      <h2>Signup</h2>
+      <h2>Register</h2>
 
       <form className="signup-form" onSubmit={handleSignUp} >
         <input 
@@ -60,7 +64,7 @@ function SignUpComponent() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button className="signup-btn" >Sign Up</button> 
+        <button className="signup-btn" >Register</button> 
       </form>
       
         {
@@ -68,7 +72,7 @@ function SignUpComponent() {
         }
 
       <Link to={'/'}>
-        <button className="back-btn">Back</button>
+        <button onClick={resetMessage} className="back-btn">Back</button>
       </Link>
    </section>
   )

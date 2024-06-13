@@ -7,6 +7,7 @@ import { useState } from "react"
 function LoginComponents() {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
 
   const { loginUser } = useUserStore((state) => ({
     loginUser: state.loginUser
@@ -31,7 +32,7 @@ function LoginComponents() {
     setUsername('');
     setPassword('');
   };
-  
+
 
   return (
     <section className="login-section">
