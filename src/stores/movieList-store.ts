@@ -57,7 +57,7 @@ const useMovieListStore = create<MovieStore>((set) => ({
         axios.post(`http://localhost:8080/api/movies?key=${apiKey}`, newMovie)
             .then(response => {
                 set(state => ({
-                    movieList : [...state.movieList, response.data.data]
+                    movieList : [response.data.data, ...state.movieList]
                 }));
                 console.log("Added movie: ", response.data.data);
             })
