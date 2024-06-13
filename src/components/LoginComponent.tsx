@@ -2,16 +2,15 @@ import { useNavigate } from "react-router-dom"
 import './styles/LoginComponent.css'
 import useUserStore from "../stores/user-store"
 import userType from '../models/User'
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 function LoginComponents() {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [message, setMessage] = useState<string>('');
 
-  const { loginUser, error } = useUserStore((state) => ({
+  const { loginUser } = useUserStore((state) => ({
     loginUser : state.loginUser,
-    error : state.error
   }));
 
   const navigate = useNavigate();
