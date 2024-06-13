@@ -22,7 +22,7 @@ function MovieDetailsComponent() {
     <button className="back-btn" onClick={() => navigate(-1)}>Back</button>
     <div className="info">
         <img src={movie.poster} alt={`${movie.title} Thumnail`}/>            
-        <iframe className="trailer-frame"src={movie.trailer_link} ></iframe>            
+        <iframe className="trailer-frame"src={movie.trailer_link} height="320" ></iframe>            
     </div>
         
    </section>
