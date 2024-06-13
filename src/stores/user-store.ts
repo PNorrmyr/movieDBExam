@@ -76,6 +76,7 @@ const useUserStore = create<UserStore>((set) => ({
             return true;
            }
         } catch (error) {
+            if (axios.isAxiosError(error) && error.response)
             console.log('error', error.response.data);
         }
         return false;

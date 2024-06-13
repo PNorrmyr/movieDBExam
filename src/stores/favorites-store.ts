@@ -6,7 +6,7 @@ import axios from 'axios'
 type FavoritesStore = {
     favoriteList : Movietype[]
     toggleFavorite : (movieId : string, apiKey : string) => void
-}
+};
 
 const useFavoritesStore = create<FavoritesStore>((set) => ({
 
@@ -15,24 +15,24 @@ const useFavoritesStore = create<FavoritesStore>((set) => ({
     toggleFavorite : (movieId : string, apiKey : string) => {
         axios.put(`http://localhost:8080/api/movies/${movieId}?key=${apiKey}`)
         .then(response => {
-            const movie : Movietype = response.data.data
+            const movie : Movietype = response.data.data;
             set(state => {
                 if(movie.is_favorite){
-                    const exist = state.favoriteList.some(m => m.imdbid === movieId)
+                    const exist = state.favoriteList.some(m => m.imdbid === movieId);
                     if(!exist){
-                        return { favoriteList: [...state.favoriteList, movie]}
-                    }
+                        return { favoriteList: [...state.favoriteList, movie]};
+                    };
                 } else {
-                    return { favoriteList: state.favoriteList.filter(m => m.imdbid !== movieId)}
+                    return { favoriteList: state.favoriteList.filter(m => m.imdbid !== movieId)};
                 }
-                return state
-            })
+                return state;
+            });
         })
         .catch(error => {
             console.log('Something went wrong ', error);
-        }) 
+        });
     }
-}))
+}));
 
 export default useFavoritesStore
 
