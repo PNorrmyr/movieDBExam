@@ -36,7 +36,7 @@ function NavComponent({ tempClass } : Props) {
               </button>
           </Link>
 
-          <h1>My Movie Database</h1>
+          <h1 className="movies-heading">Movies</h1>
 
           <Link to={'/favorites'}>
             <button className={`favorites-btn ${tempClass}`}>Favorites</button>

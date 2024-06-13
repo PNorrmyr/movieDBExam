@@ -16,14 +16,14 @@ function MovieListComponent() {
   return (
    <section className="movie-list-section">
     <AddMovieComponent />
-    
-    <h2>Movies</h2>
-    {movieList.map(movie => (
-        <MovieCardComponent 
-          key={movie.imdbid} 
-          movie = {movie} 
-          handleDelete={ () => deleteMovie(movie.imdbid, apiKey) } />
-    ))}
+    <div className="movie-list-wrapper">
+      {movieList.map(movie => (
+          <MovieCardComponent 
+            key={movie.imdbid} 
+            movie = {movie} 
+            handleDelete={ () => deleteMovie(movie.imdbid, apiKey) } />
+      ))}
+    </div>
    </section>
   )
 }

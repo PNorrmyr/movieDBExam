@@ -5,7 +5,7 @@
     width: 100%;
   }  
 
-  .favorite-page-wrapper h2, .favorite-page-wrapper h4 {
+  .favorite-page-heading {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 0;

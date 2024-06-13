@@ -16,6 +16,7 @@
     .login-section h2 {
         color: #394a51;
         font-size: 2rem;
+        margin: 1rem 0;
     }
 
     .username, .password {
