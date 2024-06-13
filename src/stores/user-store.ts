@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import UserType from '../models/User'
-import axios, { Axios, AxiosError } from 'axios'
+import axios, { AxiosError} from 'axios'
 
 type UserStore = {
     users : UserType[],
@@ -48,19 +48,24 @@ const useUserStore = create<UserStore>((set) => ({
         }     
     },
 
-    loginUser : async (user : UserType) => {
+    loginUser: async (user: UserType): Promise<boolean> => {
         try {
-            const response = await axios.post('http://localhost:8080/api/auth/login', user)
-           console.log('response', response.data);
-           if(response.data.success){
-            sessionStorage.setItem(response.data.user.username, response.data.user.password)
+          const response = await axios.post('http://localhost:8080/api/auth/login', user);
+          console.log('response', response.data);
+          if (response.data.success) {
+            sessionStorage.setItem(response.data.user.username, response.data.user.password);
             return true;
-           }
+          } else {
+            return false; 
+          }
         } catch (error) {
+          if (axios.isAxiosError(error) && error.response) {
+            set({ error: error.response.data.message });
             console.log('error', error.response.data);
+          }
+          return false;
         }
-        return false;
-    },
+      },
 
     logoutUser : async () => {
         try {

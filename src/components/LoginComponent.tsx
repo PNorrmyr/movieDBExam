@@ -2,15 +2,16 @@ import { useNavigate } from "react-router-dom"
 import './styles/LoginComponent.css'
 import useUserStore from "../stores/user-store"
 import userType from '../models/User'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function LoginComponents() {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [message, setMessage] = useState<string>('');
 
-  const { loginUser } = useUserStore((state) => ({
-    loginUser: state.loginUser
+  const { loginUser, error } = useUserStore((state) => ({
+    loginUser : state.loginUser,
+    error : state.error
   }));
 
   const navigate = useNavigate();
@@ -26,9 +27,8 @@ function LoginComponents() {
     if(success){
       navigate('/home')
     } else {
-      console.log('wrong');
-    };
-    
+      setMessage('Wrong login details')
+    }
     setUsername('');
     setPassword('');
   };
@@ -50,6 +50,9 @@ function LoginComponents() {
                     placeholder="Password" 
                     onChange={(e) => setPassword(e.target.value)}
             />
+            {
+              message && <h3 className="message">{message}</h3>
+            }
             <button className="login-btn" >Login</button> 
         </form>
     </section>

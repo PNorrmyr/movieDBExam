@@ -27,6 +27,10 @@
         font-size: .8rem;
     }
 
+    .message{
+        color: #394a51;
+    }
+
     .login-btn {
         padding: .5rem 2rem;
         background-color: #7fa99b;
