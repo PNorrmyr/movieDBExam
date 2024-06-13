@@ -5,47 +5,43 @@ import useUserStore from '../stores/user-store'
 
 type Props = {
   tempClass? : string
-}
+};
 
 function NavComponent({ tempClass } : Props) {
   const {logoutUser} = useUserStore(state => ({
     logoutUser : state.logoutUser
-    
-  }))
+  }));
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
-    const success = await logoutUser()
+    const success = await logoutUser();
     if(success){
       console.log('Logout successfully');
       navigate('/')
     } else {
       console.log('Logout failed');
-      
     }
-
-  } 
+  };
 
   return (
     <header className="heading">
       <img src={logo} alt="website logo" className="logo" />
       { 
-           <div className={`top-nav ${tempClass}`}>
-              <Link to={'/'}>
-                  <button className={`user-btn ${tempClass}`} 
-                          onClick={handleLogout}>
-                          Logout
-                  </button>
-              </Link>
+        <div className={`top-nav ${tempClass}`}>
+          <Link to={'/'}>
+              <button className={`user-btn ${tempClass}`} 
+                      onClick={handleLogout}>
+                      Logout
+              </button>
+          </Link>
 
-              <h1>My Movie Database</h1>
+          <h1>My Movie Database</h1>
 
-              <Link to={'/favorites'}>
-                <button className={`favorites-btn ${tempClass}`}>Favorites</button>
-              </Link>
-            </div>
-
+          <Link to={'/favorites'}>
+            <button className={`favorites-btn ${tempClass}`}>Favorites</button>
+          </Link>
+        </div>
       }
     </header>
   )

@@ -11,15 +11,14 @@ import FavoritesPage from './pages/FavoritesPage';
 import MovieDetailspage from './pages/MovieDetailspage';
 
 function App() {
-  const { movieList, setMovies } = useMovieListStore(state => ({
-    movieList : state.movieList,
+  const { setMovies } = useMovieListStore(state => ({
     setMovies : state.setMovies
-  }))
+  }));
 
   const {apiKey, setApiKey } = useApiStore((state) => ({
     apiKey : state.apiKey,
     setApiKey : state.setApiKey
-}))
+}));
 
   useEffect(() => {
     axios.get('http://localhost:8080/api/keys')
@@ -29,7 +28,7 @@ function App() {
     .catch(error => {
       console.log(error);
     })
-  }, [])
+  }, []);
 
   useEffect(() => {
     if(apiKey) {
@@ -41,7 +40,7 @@ function App() {
       console.log(error);
       })
     }
-  }, [apiKey, setMovies])
+  }, [apiKey, setMovies]);
 
   return (
     <Routes>

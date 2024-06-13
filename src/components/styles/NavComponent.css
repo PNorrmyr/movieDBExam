@@ -1,10 +1,10 @@
 @media (max-width: 500px) {
-    .heading{
+    .heading {
         background-color: #fdc57b; 
 
     }
 
-    .top-nav{
+    .top-nav {
         display: flex;
         padding: 1rem;
         align-items: start;
@@ -18,13 +18,13 @@
         text-align: center;
     }
 
-    .logo{
+    .logo {
         width: 100%;
         height: auto;
         border-radius: 0;
     }
 
-    .user-btn, .favorites-btn{
+    .user-btn, .favorites-btn {
         padding: .3rem .4rem;
         background-color: #7fa99b;
         color: #fbf2d5;
@@ -36,7 +36,7 @@
         margin: 0;
     }
 
-    .hide-page{
+    .hide-page {
         display: none;
     }
 

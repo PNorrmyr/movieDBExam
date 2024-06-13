@@ -7,12 +7,12 @@ function LoginPage() {
   return (  
     <section>
         <NavComponent tempClass="hide-page"/>
+        
         <section className="login-page-wrapper">
             <LoginComponents />
+
             <Link to={'/signup'} className="link">
-              <button className="sign-up-btn">
-                Sign Up
-              </button>
+              <button className="sign-up-btn">Sign Up</button>
             </Link>
         </section>
     </section>

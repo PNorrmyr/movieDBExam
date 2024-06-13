@@ -4,6 +4,6 @@ type Movie = {
     trailer_link : string,
     poster : string,
     is_favorite : boolean
-}
+};
 
 export default Movie

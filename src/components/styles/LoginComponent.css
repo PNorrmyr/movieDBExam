@@ -1,19 +1,19 @@
 @media (max-width: 500px) {    
-    .login-section{
+    .login-section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         color: #394a51;;
     }
 
-    .login-form{
+    .login-form {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;        
     }
 
-    .login-section h2{
+    .login-section h2 {
         color: #394a51;
         font-size: 2rem;
     }
@@ -27,7 +27,7 @@
         font-size: .8rem;
     }
 
-    .login-btn{
+    .login-btn {
         padding: .5rem 2rem;
         background-color: #7fa99b;
         color: #fbf2d5;

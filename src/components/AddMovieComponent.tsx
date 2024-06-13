@@ -6,28 +6,28 @@ import './styles/AddMovieComponent.css'
 
 
 function AddMovieComponent() {
-  const { apiKey } = useApiStore.getState()
-  const { addMovie } = useMovieListStore(state => ({addMovie : state.addMovie}))
+  const { apiKey } = useApiStore.getState();
+  const { addMovie } = useMovieListStore(state => ({addMovie : state.addMovie}));
 
-  const [title, setTitle] = useState<string>('')
-  const [poster, setPoster] = useState<string>('')
-  const [trailer, setTrailer] = useState<string>('')
+  const [title, setTitle] = useState<string>('');
+  const [poster, setPoster] = useState<string>('');
+  const [trailer, setTrailer] = useState<string>('');
 
   const handleAddMovie = (e : React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     const newMovie : MovieType = {
       title,
       poster,
       trailer_link : trailer,
       imdbid: '',
       is_favorite: false
-    }    
-    addMovie(newMovie, apiKey)
+    };
+    addMovie(newMovie, apiKey);
 
-    setTitle('')
-    setPoster('')
-    setTrailer('')
-  }
+    setTitle('');
+    setPoster('');
+    setTrailer('');
+  };
 
   return (
     <section className="add-movie-section">

@@ -1,5 +1,5 @@
 @media (max-width: 500px) {
-    .movie-card{
+    .movie-card {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -12,14 +12,14 @@
         border-radius: 5px;
     }
 
-    .thumbnail{
+    .thumbnail {
         width: 80px;
         height: auto;
         border-radius: 5px;
         margin-right: 0px;
     }
 
-    .title-container{
+    .title-container {
         width: 100%;
         display: flex;
         justify-content: center;
@@ -28,7 +28,7 @@
         background-color: transparent;
     }
 
-    .movie-title{
+    .movie-title {
         text-decoration: none;
         font-size: 1.5rem;
         color: #394a51;
@@ -37,11 +37,11 @@
 
     }
 
-    .hidden{
+    .hidden {
         display: none;
     }
 
-    .btns{
+    .btns {
         display: flex;
         flex-direction: column;
         gap: .5rem;
@@ -51,7 +51,7 @@
         background-color: transparent;
     }
 
-    .link{
+    .link {
         text-decoration: none;
         background-color: transparent;
     }
@@ -65,14 +65,14 @@
         background-color: transparent;
     }
 
-    .fa-regular, .fa-solid{
+    .fa-regular, .fa-solid {
         color: #7fa99b;
         font-size: 2rem;
         cursor: pointer;
         background-color: transparent;
     }
     
-    .fa-regular:hover, .fa-solid:hover{
+    .fa-regular:hover, .fa-solid:hover {
         opacity: 0.8;
     }
 

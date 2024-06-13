@@ -1,9 +1,9 @@
 @media (max-width: 500px) {
-    h3{
+    h3 {
         text-align: center;
     }
     
-    .add-movie-form{
+    .add-movie-form {
         display: flex;
         flex-direction: column;
         gap: .5rem;
@@ -21,7 +21,7 @@
         border-radius: 5px;
     }
 
-    .add-btn{
+    .add-btn {
         cursor: pointer;
         width: 25%;
         display: flex;

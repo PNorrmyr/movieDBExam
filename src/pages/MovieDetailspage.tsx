@@ -12,7 +12,7 @@ function MovieDetailspage() {
         movieList : state.movieList,
         setMovie : state.setMovie,
         movie : state.movie
-    }))
+    }));
 
     useEffect(() => {
         if(movieId !== undefined){
@@ -21,19 +21,19 @@ function MovieDetailspage() {
             if(selectedMovie === undefined) {
                 console.log('Movie not found');
             } else {
-                setMovie(selectedMovie)
+                setMovie(selectedMovie);
             }
         }
-    }, [movieId, movieList, setMovie])
+    }, [movieId, movieList, setMovie]);
 
 
   return (
     <section className="movie-details-page-wrapper">
         <NavComponent tempClass="hide-page"/>
+
         <div className="details-page-wrapper">
             { movie ? <MovieDetailsComponent  /> : <p>Fetching Movie</p>}
         </div>
-        
     </section>
   )
 }

@@ -5,32 +5,32 @@ import userType from '../models/User'
 import { useState } from "react"
 
 function LoginComponents() {
-  const [username, setUsername] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const { loginUser } = useUserStore((state) => ({
     loginUser: state.loginUser
-  }))
+  }));
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLogin = async (e : React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     const newUser : userType = {
       username,
       password
-    }   
+    };
 
-    const success = await loginUser(newUser)
+    const success = await loginUser(newUser);
     if(success){
       navigate('/home')
     } else {
       console.log('wrong');
-    }
+    };
     
-    setUsername('')
-    setPassword('')  
-  }
+    setUsername('');
+    setPassword('');
+  };
   
 
   return (

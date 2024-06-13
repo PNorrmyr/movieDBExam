@@ -7,12 +7,13 @@ import './styles/MovieDetailsComponent.css'
 function MovieDetailsComponent() {
     const { movie } = useMovieListStore((state) => ({
         movie : state.movie
-    }))
-    const navigate = useNavigate()
+    }));
+
+    const navigate = useNavigate();
 
     if(!movie) {
         return <p>Fetching movie</p>
-    }
+    };
 
 
 

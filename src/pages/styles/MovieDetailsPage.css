@@ -1,9 +1,6 @@
 @media (max-width: 500px) {
-    .movie-details-page-wrapper{
+    .movie-details-page-wrapper {
         max-width: 100%;
         background-color: #fdc57b ;
     }
-
-
-
 }

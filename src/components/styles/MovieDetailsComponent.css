@@ -1,5 +1,5 @@
 @media (max-width: 500px){
-    .details-component{
+    .details-component {
         width: 100%;
         padding: 1rem;
     }
@@ -10,25 +10,21 @@
         margin-bottom: 0;
     }
 
-    .back-btn{
+    .back-btn {
         margin-bottom: 1rem;
     }
 
-    img, iframe{
+    img, iframe {
         margin: 0;
         width: 100%;
         border-radius: 5px;
     }
 
-    .info{
+    .info { 
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-    }
-
-    .iframe{
-        width: 100%;
     }
 
 }    

@@ -9,8 +9,7 @@ type Props = {
   movie : MovieType, 
   handleDelete? : () => void,
   tempClass? : string
-}
-
+};
 
 
 
@@ -18,19 +17,19 @@ function MovieCardComponent({ movie, handleDelete, tempClass} : Props) {
   const { toggleFavorite, favoriteList } = useFavoritesStore((state) => ({
     toggleFavorite : state.toggleFavorite,
     favoriteList : state.favoriteList
-  }))
+  }));
 
-  const { apiKey } = useApiStore.getState()
-  const [isFavorite, setIsFavorite] = useState<boolean>(false)
+  const { apiKey } = useApiStore.getState();
+  const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
   useEffect(()=> {
     setIsFavorite(favoriteList.some(m => m.imdbid === movie.imdbid))
-  },[favoriteList, movie.imdbid])
+  },[favoriteList, movie.imdbid]);
 
   const handleFavoriteClick = () => {
-    toggleFavorite(movie.imdbid, apiKey)
-    setIsFavorite((prev) => !prev)
-  }
+    toggleFavorite(movie.imdbid, apiKey);
+    setIsFavorite((prev) => !prev);
+  };
 
   
  

@@ -9,10 +9,9 @@ function MovieListComponent() {
   const { movieList, deleteMovie } = useMovieListStore(state => ({
     movieList: state.movieList,
     deleteMovie : state.deleteMovie,
-    
-  }))
+  }));
   
-  const { apiKey } = useApiStore.getState()
+  const { apiKey } = useApiStore.getState();
 
   return (
    <section className="movie-list-section">

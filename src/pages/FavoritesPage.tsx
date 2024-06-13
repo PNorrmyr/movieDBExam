@@ -7,16 +7,18 @@ import './styles/FavoritesPage.css'
 function FavoritesPage() {
     const { favoriteList } = useFavoritesStore(state => ({
         favoriteList : state.favoriteList
-    }))
+    }));
 
   return (
     <section>
         <NavComponent tempClass="hide-page"/>
         <div className="favorite-page-wrapper">
             <h2>Favorites</h2>
+
             <Link to={'/home'}>
                 <button className="back-btn">Back</button>
             </Link>
+
             {
                 favoriteList.length === 0 ? <h4>No favorites yet</h4> :
                 favoriteList.filter((movie) => movie.is_favorite)
@@ -27,6 +29,7 @@ function FavoritesPage() {
                         tempClass="hidden"/>
                 )) 
             }
+            
         </div>
     </section>
   )
