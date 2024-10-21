@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import UserType from '../models/User'
-import axios, { AxiosError} from 'axios'
+import axios from 'axios'
 
 type UserStore = {
     users : UserType[],
